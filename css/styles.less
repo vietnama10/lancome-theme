@@ -1,0 +1,185 @@
+/****
+*** Dung Le, 32/01/2018
+***/
+
+/* Fonts*/
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('../fonts/Gotham-Bold/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/Gotham-Bold/Gotham-Bold.otf')  format('opentype'),
+           url('../fonts/Gotham-Bold/Gotham-Bold.woff') format('woff'), url('../fonts/Gotham-Bold/Gotham-Bold.ttf')  format('truetype'), url('../fonts/Gotham-Bold/Gotham-Bold.svg#Gotham-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('../fonts/Gotham-Book/Gotham-Book.eot?#iefix') format('embedded-opentype'),  url('../fonts/Gotham-Book/Gotham-Book.otf')  format('opentype'),
+           url('../fonts/Gotham-Book/Gotham-Book.woff') format('woff'), url('../fonts/Gotham-Book/Gotham-Book.ttf')  format('truetype'), url('../fonts/Gotham-Book/Gotham-Book.svg#Gotham-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('../fonts/Gotham-Light/Gotham-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/Gotham-Light/Gotham-Light.otf')  format('opentype'),
+           url('../fonts/Gotham-Light/Gotham-Light.woff') format('woff'), url('../fonts/Gotham-Light/Gotham-Light.ttf')  format('truetype'), url('../fonts/Gotham-Light/Gotham-Light.svg#Gotham-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url('../fonts/Gotham-Medium/Gotham-Medium.eot?#iefix') format('embedded-opentype'),  url('../fonts/Gotham-Medium/Gotham-Medium.otf')  format('opentype'),
+           url('../fonts/Gotham-Medium/Gotham-Medium.woff') format('woff'), url('../fonts/Gotham-Medium/Gotham-Medium.ttf')  format('truetype'), url('../fonts/Gotham-Medium/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MillerDisplay-Light';
+    src: url('../fonts/MillerDisplay-Light/MillerDisplay-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/MillerDisplay-Light/MillerDisplay-Light.otf')  format('opentype'),
+           url('../fonts/MillerDisplay-Light/MillerDisplay-Light.woff') format('woff'), url('../fonts/MillerDisplay-Light/MillerDisplay-Light.ttf')  format('truetype'), url('../fonts/MillerDisplay-Light/MillerDisplay-Light.svg#MillerDisplay-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+
+/* Variables */
+@font-gotham_book: 'Gotham-Book', Helvetica, Roboto, Arial, sans-serif;
+@font-gotham_bold: 'Gotham-Bold', Helvetica, Roboto, Arial, sans-serif;
+@font-gotham_light: 'Gotham-Light', Helvetica, Roboto, Arial, sans-serif;
+@font-gotham_medium: 'Gotham-Medium', Helvetica, Roboto, Arial, sans-serif;
+@font-millerdisplay_light: 'MillerDisplay-Light', Helvetica, Roboto, Arial, sans-serif;
+
+@color-pink_dark: #d61b52;
+@color-black: #000000;
+@color-black_medium: #131313;
+@color-black_light: #333333;
+@color-dark_light: #999999;
+@color-dark_light_border: #dadada;
+@color-dark_light_background: #f5f5f5;
+@color-white: #ffffff;
+
+
+/* Mixins */
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+    border-radius: @topleft @topright @bottomright @bottomleft;
+}
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.transition (@prop: all, @time: 1s, @ease: linear) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+.list-style-inline (@top: 5px, @right: 5px, @bottom: 5px, @left: 5px){
+    display: inline-block;
+    list-style-type: none;
+    padding: @top @right @bottom @left;
+}
+.list-style-block (@top: 5px, @right: 5px, @bottom: 5px, @left: 5px){
+    display: block;
+    list-style-type: none;
+    padding: @top @right @bottom @left;
+}
+
+/* Custom styles*/
+
+    // 1. Slick Slider
+    .slick-slider{
+        .slick-arrow{
+            z-index: 1;
+            background-position: center;
+            &:before{
+                display: none;
+            }
+        }
+        .slick-prev{
+            left: 3%;
+            background-image: url('../images/left.png');
+        }
+        .slick-next{
+            right: 3%;
+            background-image: url('../images/right.png');
+        }
+    }
+
+    // 2. Wrapper Content Margin
+    .wrapper-content{
+        margin: 0 30px; 
+    }
+    
+    // 3. Styles For Product Item (Grid Mode) => Chỉ cần "extend all" class này là được 
+    .grid-product-item{
+        padding: 15px;
+        >a{
+            display: block;
+            float: left;
+            width: 100%;
+            >img{
+                float: left;
+                width: 100%;
+                padding: 0 20px;
+            }
+        }
+        .product-info{
+            float: left;
+            width: 100%;
+            text-align: center;
+            >*{
+                padding: 5px 0;
+            }
+            .name{
+                >a{
+                    font-family: @font-gotham_medium;
+                    font-size: 14px;
+                    color: @color-black;
+                    text-transform: uppercase;
+                }
+            }
+            .action{
+                .addtocart{
+                    padding: 10px 20px;
+                    font-family: @font-gotham_medium;
+                    font-size: 14px;
+                    color: @color-white;
+                    text-transform: uppercase;
+                    background: @color-black;
+                    border: none;
+                }
+            }
+            .price{
+                display: inline-flex;
+                >*{
+                    padding: 0 10px;
+                    color: @color-black;
+                    font-family: @font-gotham_bold;
+                    font-size: 14px;
+                }
+                .origin-price{
+                    text-decoration: line-through;
+                    color: @color-dark_light;
+                    border-left: solid 1px @color-dark_light;
+                }
+            }
+        }
+    }
+
+@import url('_header.less');
+@import url('_home.less');
+@import url('_footer.less');

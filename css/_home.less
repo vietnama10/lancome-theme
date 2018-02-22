@@ -1,0 +1,70 @@
+#main_container{
+    .slider-container{
+        .slider-content{
+            .slide-item{
+                position: relative;
+                .slide-image{
+                    img{
+                        float: left;
+                        width: 100%;
+                    }
+                }
+                .slide-cabtion{
+                    position: absolute;
+                    z-index: 1;
+                    width: 40%;
+                    left: 60%;
+                    top: 35%;
+                    font-family: @font-gotham_book;
+                    text-transform: uppercase;
+                    button{
+                        background-color: @color-black;
+                        padding: 15px 30px;
+                        border-radius: unset;
+                        color: @color-white;
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        font-family: @font-gotham_book;
+                    }
+                }
+            }
+        }
+    }
+
+    .tabproduct-container{
+        .nav-tabs{
+            text-align: center;
+            border: none;
+            padding: 10px 0;
+            li{
+                display: inline-block;
+                float: none;
+                a{
+                    border: none;
+                    font-family: @font-millerdisplay_light;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    color: @color-black;
+                    &:hover{
+                        background: none;
+                        color: @color-dark_light;
+                        cursor: pointer;
+                    }
+                }
+                &.active{
+                    border-bottom: solid 1px @color-black;
+                }
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                transition: opacity 0.4s linear;
+                transition-delay: 0.4s;
+                .slick-container{
+                    .product-item:extend(.grid-product-item all){};
+                }
+            }
+        }
+    }
+
+}

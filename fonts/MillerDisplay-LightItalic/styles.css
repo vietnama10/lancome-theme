@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'MillerDisplay-LightItalic';
+  src: url('MillerDisplay-LightItalic.eot?#iefix') format('embedded-opentype'),  url('MillerDisplay-LightItalic.otf')  format('opentype'),
+	     url('MillerDisplay-LightItalic.woff') format('woff'), url('MillerDisplay-LightItalic.ttf')  format('truetype'), url('MillerDisplay-LightItalic.svg#MillerDisplay-LightItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

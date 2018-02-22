@@ -1,0 +1,273 @@
+header{
+    background-color: @color-black_medium;
+    padding: 20px 0 0 0;
+    /*General*/
+    #header_top{
+        .links{
+            padding: 10px 0 0 0;
+            float: left;
+            li{
+                .list-style-inline(0px, 0px, 0px, 0px);
+                a {
+                    border-left: solid 1px @color-dark_light;
+                    text-decoration: none;
+                    color: @color-dark_light;
+                    padding: 0 4px;
+                    font-size: 11px;
+                    font-family: @font-gotham_book;
+                    text-transform: uppercase;
+                    &:hover{
+                        color: @color-white;
+                    }
+                }
+                a.none-boder{
+                    border: none;
+                    padding: 0 2px;
+                }
+            }
+            li.active{
+                a{
+                    color: @color-white;
+                }
+            }
+        }
+
+        .top_left{
+            .language-switch{
+                margin-right: 4px;
+            }
+        }
+    
+        .top_center{
+            text-align: center;
+        }
+
+        .top_right{
+            .shopping-cart{
+                .fa-shopping-bag{
+                    color: @color-white !important;
+                    font-size: 15px;
+                    position: relative;
+                    .number-items{
+                        position: absolute;
+                        top: -10px;
+                        right: -10px;
+                        color: @color-white;
+                        padding: 2px 5px;
+                        .border-radius(50%);
+                        background-color: @color-pink_dark;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    #header_bottom{
+        .navigation{
+            position: relative;
+
+            #mainMenu{
+                padding: 0;
+                margin: 20px 0 0 0;
+                text-align: center;
+                position: relative;
+                .menu-item{
+                    .list-style-inline();
+                    padding: 20px 5px;
+                    position: static;
+                    &:hover{
+                        >a{
+                            color: @color-white;
+                            position: relative;
+                        }
+                        .megamenu{
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    &.mega-dropdown-menu{
+                        &:hover{
+                            >a{
+                                &:before{
+                                    bottom: -22px;
+                                    left: 25%;
+                                    border: solid transparent;
+                                    content: " ";
+                                    height: 0;
+                                    width: 0;
+                                    position: absolute;
+                                    pointer-events: none;
+                                    border-color: none;
+                                    border-bottom-color: @color-white;
+                                    border-width: 6px;
+                                }
+                            }
+                        }
+                    }
+                    
+                    a{
+                        text-decoration: none;
+                        color: @color-dark_light;
+                        font-family: @font-gotham_book;
+                        font-size: 11px;
+                        padding-right: 40px;
+                        letter-spacing: 0.2em;
+                    }
+
+                    .megamenu{
+                        visibility: hidden;
+                        opacity: 0;
+                        .transition(all, 0.3s, ease-in-out);
+                        position: absolute;
+                        left: 0;
+                        top: 60px;
+                        background-color: @color-white;
+                        width: 100%;
+                        padding: 15px;
+                        border: solid 1px @color-dark_light;
+                        .box-shadow();
+                        z-index: 2;
+
+                        >li{
+                            .list-style-inline();
+                            width: 100%;
+
+                            .megamenu-content{
+                                width: 100%;
+                                max-width: 1280px;
+                                margin: auto;
+
+                                .sub-megamenu-lv0{
+                                    padding: 0;
+
+                                    >li{
+                                        .list-style-inline(0, 10px, 30px, 10px);
+                                        
+                                        >a{
+                                            float: left;
+                                            width: 100%;
+                                            text-align: left;
+                                            padding: 0 10px 10px 10px;
+                                            color: @color-black;
+                                            font-family: @font-gotham_bold;
+                                            font-size: 12px;
+                                            text-transform: uppercase;
+                                        }
+
+                                        .sub-megamenu-lv1{
+                                            float: left;
+                                            width: 100%;
+                                            padding: 0;
+
+                                            >li{
+                                                .list-style-block(0, 10px, 0, 10px);
+                                                text-align: left;
+                                                >a{
+                                                    &:hover{
+                                                        color: @color-black_light;
+                                                        text-decoration: underline;
+                                                    }
+                                                }
+
+                                            }
+                                        }
+
+                                        &.bottom-block{
+                                            .block-content{
+                                                padding: 0 10px;
+                                                text-align: left;
+
+                                                >img{
+                                                    float: left;
+                                                }
+
+                                                .block-text{
+                                                    float: left;
+                                                    >span{
+                                                        float: left;
+                                                        width: 100%;
+                                                        margin: 20px;
+                                                        padding: 0;
+                                                        color: @color-black;
+                                                        font-family: @font-gotham_bold;
+                                                        text-transform: uppercase;
+                                                    }
+                                                    >a{
+                                                        float: left;
+                                                        width: 100%;
+                                                        margin: 20px;
+                                                        padding: 0;
+                                                        &:hover{
+                                                            color: @color-black;
+                                                            text-decoration: underline;
+                                                            
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            #search_button{
+                position: absolute;
+                right: 20px;
+                top: 0;
+                padding: 15px;
+                color: @color-white;
+                font-family: @font-gotham_book;
+                text-transform: uppercase;
+                background-color: @color-pink_dark;
+                border-color: @color-pink_dark;
+
+                i.fa-search{
+                    font-size: 25px;
+                    padding-left: 25px;
+                }
+            }
+
+            #search_toggle{
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                width: 100%;
+                border-bottom: solid 1px @color-black_light;
+                .box-shadow();
+
+                #searchForm{
+                    position: relative;
+                    margin: 0;
+                    
+                    #search_key{
+                        width: 100%;
+                        border: none;
+                        outline: unset;
+                        padding: 15px;
+                        font-size: 18px;
+                    }
+                    #search_submit{
+                        position: absolute;
+                        right: 20px;
+                        top: 15px;
+                        border: none;
+                        background: none;
+                        
+                        i.fa-search{
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+}
